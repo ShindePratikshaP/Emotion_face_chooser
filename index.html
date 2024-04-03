@@ -4,9 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Emotion Chooser</title>
+    <style>
+        body{
+            background-color: #f395b4;
+            background-image: linear-gradient(0deg, #f395b4 0%, #58f1eb 100%);
+            height: 100vh;
+
+        }
+        .app-title{
+           text-align: center;
+           width: 700px;
+           margin: 10px auto;
+           font-size: 60px;
+           color: #0e090b;
+           font-style: italic;
+           margin-bottom: 25px;
+           
+        }
+        .img-container{
+            width: 330px;
+            margin: 10px auto;
+            padding: 10px;
+            box-shadow: 0px 0px 5px 0px black;
+            border-radius: 2px;
+            
+
+
+        }
+        .img{
+            width: 100%;
+            height: 250px;
+        }
+        .btn-div{
+            padding: 5px;
+            width: 600px;
+            margin:20px auto;
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .btn{
+           padding: 5px 5px;
+           margin: 10px 7px;
+           width: 150px;
+           font-size: 18px;
+           font-weight: bold;
+           cursor: pointer;
+           color: black;
+           border-radius: 40px;
+           border: none;
+           box-shadow: 0px 0px 5px 0px black;
+        
+        }
+        .btn:hover{
+            box-shadow: 0px 0px 5px 2px black;
+        }
+        @media  screen and (max-width: 700px) {
+            .img-container{
+                width: 50%;
+            }  
+            .app-title{
+           width: 90%;
+           font-size: 40px;
+           
+           }
+      
+        }
+        @media  screen and (max-width: 400px) {
+            .img{
+                height: 200px;
+            }   
+            .img-container{
+                width: 70%;
+            } 
+            .app-title{
+           width: 95%;
+           font-size: 35px;
+           
+           }      
+        }
+        @media  screen and (max-width: 500px) {
+            .img{
+                height: 200px;
+            }   
+            .img-container{
+                width: 40%;
+            } 
+            .app-title{
+           width: 95%;
+           font-size: 35px;
+           
+           }            
+        }
+    </style>
 </head>
 <body>
-    <h1>Face Emotion Chooser</h1>
+    <h1 class="app-title">Face Emotion Chooser</h1>
+    <div class="img-container">
+        <img src="./imgs/happy face.jpg" class="img" id="emoji"/>
+    </div>
+    <div class="btn-div">
+        <button type="button" class="btn" onclick="happy()">happy</button>
+        <button type="button" class="btn" onclick="angry()">angry</button>
+        <button type="button" class="btn" onclick="sad()">sad</button>
+        <button type="button" class="btn" onclick="thoughtful()">thoughtful</button>
+    </div>
+
+    <script>
+        function happy()
+        {
+            const happyFace = document.getElementById("emoji");
+            happyFace.src = `./imgs/happy face.jpg`;
+        }
+        function sad()
+        {
+            const sadFace = document.getElementById("emoji");
+            sadFace.src = `./imgs/sad face.jpg`;
+        }
+        function angry()
+        {
+            const angryFace = document.getElementById("emoji");
+            angryFace.src = `./imgs/angry face.jpg`;
+        }
+        function thoughtful()
+        {
+            const tFace = document.getElementById("emoji");
+            tFace.src = `./imgs/thoughtful face.jpg`;
+        }
+    </script>
     
 </body>
 </html>
